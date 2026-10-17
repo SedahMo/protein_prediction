@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "protein-prediction-workflow"
+version = "0.1.0"
+description = "Auditable antibody point-mutation stability workflow"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+protein-stability = "protein_prediction.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
