@@ -1,0 +1,25 @@
+{
+  "data_kind": "synthetic demo \u2014 not a biological result",
+  "source_sha256": "6fcb95a3d046a146291ba8cffbf1ca05c604178d596cb21bc7b6fcc324b67e66",
+  "units": "kcal/mol",
+  "results": [
+    {
+      "variant": "A1V",
+      "mutations": "AA1V",
+      "n": 3,
+      "mean_ddg": 1.2,
+      "sd": 0.19999999999999996,
+      "min": 1.0,
+      "max": 1.4
+    },
+    {
+      "variant": "C2S",
+      "mutations": "CA2S",
+      "n": 3,
+      "mean_ddg": -0.4,
+      "sd": 0.1,
+      "min": -0.5,
+      "max": -0.3
+    }
+  ]
+}

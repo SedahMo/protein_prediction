@@ -1,0 +1,27 @@
+{
+  "comparison": "point_mutation",
+  "data_kind": "synthetic demo \u2014 not a biological result",
+  "pdb": "toy.pdb",
+  "fasta": "toy.fasta",
+  "chains": {
+    "A": "toy_A"
+  },
+  "repeats": 3,
+  "pH": 7,
+  "temperature": 298,
+  "ionStrength": 0.05,
+  "variants": [
+    {
+      "id": "A1V",
+      "mutations": [
+        "AA1V"
+      ]
+    },
+    {
+      "id": "C2S",
+      "mutations": [
+        "CA2S"
+      ]
+    }
+  ]
+}

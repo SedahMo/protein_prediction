@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+build/
+dist/
+runs/
+private_inputs/
+foldx*
+rotabase.txt
