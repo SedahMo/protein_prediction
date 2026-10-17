@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antibody-protein-stability"
+version = "0.1.0"
+description = "Offline-first, structure-aware antibody engineering stability workflow"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+protein-stability = "protein_stability.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["protein_stability*"]

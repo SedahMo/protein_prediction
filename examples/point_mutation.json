@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "study_id": "antibody-point-mutations",
+  "comparison_type": "point_mutation",
+  "reference": {
+    "fasta": "../private_inputs/reference.fasta",
+    "pdb": "../private_inputs/reference.pdb",
+    "chain_map": {"A": "reference"}
+  },
+  "variants": [
+    {
+      "id": "example_A1V_replace_with_actual_mutation",
+      "mutations": [{"chain": "A", "residue_number": 1, "from": "A", "to": "V"}]
+    }
+  ],
+  "foldx": {
+    "runs": 5,
+    "temperature": 298.0,
+    "pH": 7.0,
+    "ion_strength": 0.05,
+    "version": "REPLACE_WITH_YOUR_LICENSED_FOLDX_VERSION",
+    "timeout_seconds": 3600
+  }
+}

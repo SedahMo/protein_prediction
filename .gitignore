@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+runs/
+private_inputs/
+foldx_private/
+rotabase.txt
+/foldx
+/foldx_*
+/FoldX*

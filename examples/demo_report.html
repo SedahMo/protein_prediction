@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'"><title>SYNTHETIC DEMO — pipeline verification only · Stability analysis</title>
+<style>:root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f4f0e6;color:#28362e;font:16px/1.65 system-ui,-apple-system,sans-serif}main{max-width:1180px;margin:40px auto;padding:0 28px 60px}header{border-top:5px solid #376b57;padding:26px 0 18px}h1{font-family:Georgia,serif;font-size:38px;line-height:1.18;margin:8px 0 16px}h2{font-family:Georgia,serif;font-size:25px;margin:0 0 15px}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#637468}.meta{display:flex;gap:12px;flex-wrap:wrap}.chip{padding:4px 10px;border:1px solid #c6cec2;border-radius:4px;font-size:13px}section{background:#fffcf4;border:1px solid #dedccd;padding:24px;margin:22px 0}.banner{padding:17px 20px;border:1px solid #a4b6a1;background:#e6eddf;margin:14px 0}.synthetic{background:#fff0ce;border:2px solid #ac6a16;color:#73430e}table{border-collapse:collapse;width:100%;font-size:14px;text-align:left}td,th{padding:12px 10px;border-bottom:1px solid #dedccd;vertical-align:top}th{background:#eeeee3;font-size:12px;letter-spacing:.03em}tr.active td{background:#edf2e7}.scroll{overflow:auto}.note{font-size:13px;color:#687267}code,pre{font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#efeee4;padding:18px}svg{display:block;width:100%;min-width:540px}details{padding:12px 0;border-top:1px solid #dedccd}summary{cursor:pointer}footer{font-size:12px;color:#687267}@media print{body{background:white}main{margin:0;padding:0}section{break-inside:avoid}details>div{display:block}}@media(max-width:600px){main{padding:0 15px}h1{font-size:30px}section{padding:16px}}</style></head>
+<body><main><header><div class="eyebrow">Antibody engineering · reproducible computation</div><h1>SYNTHETIC DEMO — pipeline verification only</h1><div class="meta"><span class="chip">Status: completed</span><span class="chip">Comparison: point_mutation</span></div></header><div class="banner synthetic"><strong>SYNTHETIC DEMONSTRATION · 人工演示数据</strong><br>Hand-written fixture values test this workflow. No biological stability calculation was performed.</div><section><h2>Within-reference point mutation comparison</h2><p>ΔΔG = G(mutant) − G(WT), kcal/mol. Positive values predict destabilization. Variants retain their manifest order.</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 191" role="img" aria-label="FoldX point mutation mean difference with sample standard deviation"><title>Point mutation ΔΔG: mean ± sample SD</title><g font-family="system-ui,sans-serif" font-size="13" fill="#303b35"><line x1="220.00" y1="28" x2="220.00" y2="146" stroke="#e1ded4"/><text x="220.00" y="166" text-anchor="middle">-0.67</text><line x1="375.00" y1="28" x2="375.00" y2="146" stroke="#e1ded4"/><text x="375.00" y="166" text-anchor="middle">-0.33</text><line x1="530.00" y1="28" x2="530.00" y2="146" stroke="#768176"/><text x="530.00" y="166" text-anchor="middle">0.00</text><line x1="685.00" y1="28" x2="685.00" y2="146" stroke="#e1ded4"/><text x="685.00" y="166" text-anchor="middle">0.33</text><line x1="840.00" y1="28" x2="840.00" y2="146" stroke="#e1ded4"/><text x="840.00" y="166" text-anchor="middle">0.67</text><text x="202" y="57" text-anchor="end">synthetic_variant_A</text><line x1="317.95" y1="52" x2="464.33" y2="52" stroke="#376b57" stroke-width="3"/><line x1="317.95" y1="47" x2="317.95" y2="57" stroke="#376b57"/><line x1="464.33" y1="47" x2="464.33" y2="57" stroke="#376b57"/><circle cx="391.14" cy="52" r="6" fill="#376b57"/><text x="202" y="105" text-anchor="end">synthetic_variant_B</text><line x1="641.96" y1="100" x2="788.33" y2="100" stroke="#a35a35" stroke-width="3"/><line x1="641.96" y1="95" x2="641.96" y2="105" stroke="#a35a35"/><line x1="788.33" y1="95" x2="788.33" y2="105" stroke="#a35a35"/><circle cx="715.15" cy="100" r="6" fill="#a35a35"/><text x="530.0" y="188" text-anchor="middle">ΔΔG (kcal/mol): positive predicts destabilization</text></g></svg><div class="scroll"><table><thead><tr><th>Variant</th><th>Mutation input</th><th>n</th><th>Mean</th><th>Sample SD</th><th>Minimum</th><th>Maximum</th></tr></thead><tbody><tr><td>synthetic_variant_A</td><td><code>AA1V;</code></td><td>5</td><td>-0.300</td><td>0.158</td><td>-0.500</td><td>-0.100</td></tr><tr><td>synthetic_variant_B</td><td><code>GA2S;</code></td><td>5</td><td>0.400</td><td>0.158</td><td>0.200</td><td>0.600</td></tr></tbody></table></div><p class="note">Mean ± sample SD describes FoldX model sampling variability. It is not experimental uncertainty or a confidence interval. SD is unavailable for a single repeat. This report does not convert ΔΔG into melting temperature.</p></section>
+<section><h2>Comparison rules</h2><div class="scroll"><table><thead><tr><th>Comparison</th><th>Required basis</th><th>Permitted conclusion</th></tr></thead><tbody><tr class="active"><td>Point substitutions<br><code>point_mutation</code></td><td>Same sequence length, domain order and reference backbone; explicit mutations</td><td>BuildModel mutant − WT ΔΔG within this study; compare paired variants only</td></tr><tr class=""><td>Different linker<br><code>linker</code></td><td>Separate validated structural ensembles; inspect junction geometry and domain contacts</td><td>Assess ensemble quality, developability and experiments; do not rank absolute FoldX energies across constructs</td></tr><tr class=""><td>VH/VL order change<br><code>domain_order</code></td><td>Model both orientations and linker contexts; evaluate interface confidence</td><td>Use orientation-specific evidence and matched experiments; no direct BuildModel ΔΔG for rearrangement</td></tr><tr class=""><td>Different proteins/backbones<br><code>cross_protein</code></td><td>Independent sequence/structure provenance, residue coverage and structural confidence</td><td>No universal stability ranking from FoldX total energy; use appropriate matched endpoints</td></tr></tbody></table></div></section>
+<section><h2>Interpretation and remaining work</h2><ul><li>Replicates sample the FoldX modeling procedure; they do not establish accuracy or experimental reproducibility.</li></ul></section>
+<section><h2>Replicate outputs</h2><details><summary>synthetic_variant_A — replicate trace</summary><div class="scroll"><table><thead><tr><th>Repeat</th><th>Model</th><th>ΔΔG (kcal/mol)</th><th>Source</th></tr></thead><tbody><tr><td>1</td><td>demo_Repair_1.pdb</td><td>-0.400</td><td><code>replicates/run_001/Dif_demo_Repair.fxout</code></td></tr><tr><td>2</td><td>demo_Repair_1.pdb</td><td>-0.200</td><td><code>replicates/run_002/Dif_demo_Repair.fxout</code></td></tr><tr><td>3</td><td>demo_Repair_1.pdb</td><td>-0.300</td><td><code>replicates/run_003/Dif_demo_Repair.fxout</code></td></tr><tr><td>4</td><td>demo_Repair_1.pdb</td><td>-0.100</td><td><code>replicates/run_004/Dif_demo_Repair.fxout</code></td></tr><tr><td>5</td><td>demo_Repair_1.pdb</td><td>-0.500</td><td><code>replicates/run_005/Dif_demo_Repair.fxout</code></td></tr></tbody></table></div></details><details><summary>synthetic_variant_B — replicate trace</summary><div class="scroll"><table><thead><tr><th>Repeat</th><th>Model</th><th>ΔΔG (kcal/mol)</th><th>Source</th></tr></thead><tbody><tr><td>1</td><td>demo_Repair_2.pdb</td><td>0.200</td><td><code>replicates/run_001/Dif_demo_Repair.fxout</code></td></tr><tr><td>2</td><td>demo_Repair_2.pdb</td><td>0.400</td><td><code>replicates/run_002/Dif_demo_Repair.fxout</code></td></tr><tr><td>3</td><td>demo_Repair_2.pdb</td><td>0.300</td><td><code>replicates/run_003/Dif_demo_Repair.fxout</code></td></tr><tr><td>4</td><td>demo_Repair_2.pdb</td><td>0.500</td><td><code>replicates/run_004/Dif_demo_Repair.fxout</code></td></tr><tr><td>5</td><td>demo_Repair_2.pdb</td><td>0.600</td><td><code>replicates/run_005/Dif_demo_Repair.fxout</code></td></tr></tbody></table></div></details></section>
+<section><h2>Traceability</h2><p>Energy data, manifest hashes, reference hashes and settings are exported in <code>results.json</code>; numeric summaries are exported in <code>summary.csv</code>.</p><details><summary>Reference, settings and source manifest</summary><pre>{
+  &quot;reference&quot;: {
+    &quot;pdb_sha256&quot;: &quot;2b4ff1d8fea5e2dfdcc7b46d60f50774bba40b4dfff293d4791248960deedf70&quot;,
+    &quot;fasta_sha256&quot;: &quot;2b4ff1d8fea5e2dfdcc7b46d60f50774bba40b4dfff293d4791248960deedf70&quot;,
+    &quot;prepared_pdb_sha256&quot;: &quot;2b4ff1d8fea5e2dfdcc7b46d60f50774bba40b4dfff293d4791248960deedf70&quot;
+  },
+  &quot;foldx&quot;: {
+    &quot;runs&quot;: 5,
+    &quot;temperature&quot;: 298.0,
+    &quot;pH&quot;: 7.0,
+    &quot;ion_strength&quot;: 0.05,
+    &quot;version&quot;: &quot;NOT RUN: hand-written synthetic fixture&quot;,
+    &quot;seed_policy&quot;: &quot;Not applicable: synthetic values&quot;
+  },
+  &quot;provenance&quot;: {
+    &quot;manifest&quot;: &quot;run_manifest.json&quot;,
+    &quot;manifest_sha256&quot;: &quot;2cdeb99cdb0148019023b70554ad521c4fe5159baee02d474158f1a14d179cd9&quot;,
+    &quot;source_files&quot;: [
+      {
+        &quot;path&quot;: &quot;replicates/run_001/Dif_demo_Repair.fxout&quot;,
+        &quot;sha256&quot;: &quot;e253c6be59a3c44fe30ecc6385d53f4427ee780fd9be9fb60f0384525d2039d0&quot;,
+        &quot;replicate&quot;: 1
+      },
+      {
+        &quot;path&quot;: &quot;replicates/run_002/Dif_demo_Repair.fxout&quot;,
+        &quot;sha256&quot;: &quot;094ab68c41a8d2c835372c834d22eca3a3cfc9dd16a0ec846b3da681d1aaa9f2&quot;,
+        &quot;replicate&quot;: 2
+      },
+      {
+        &quot;path&quot;: &quot;replicates/run_003/Dif_demo_Repair.fxout&quot;,
+        &quot;sha256&quot;: &quot;dc5097f83d8528bb2868a0ebaf7d38a279a4f309d09f1b13dd9cbfd88f6afd92&quot;,
+        &quot;replicate&quot;: 3
+      },
+      {
+        &quot;path&quot;: &quot;replicates/run_004/Dif_demo_Repair.fxout&quot;,
+        &quot;sha256&quot;: &quot;0931a618ad2cade162964da9482d52423ccabf5787a7399f0a7eb18cd7125ed6&quot;,
+        &quot;replicate&quot;: 4
+      },
+      {
+        &quot;path&quot;: &quot;replicates/run_005/Dif_demo_Repair.fxout&quot;,
+        &quot;sha256&quot;: &quot;6f50831bef44328406099dd95eeeadaa3968c9584862696f64b7c1cd16dd4e50&quot;,
+        &quot;replicate&quot;: 5
+      }
+    ],
+    &quot;run_manifest&quot;: {
+      &quot;schema_version&quot;: 1,
+      &quot;study_id&quot;: &quot;SYNTHETIC DEMO — pipeline verification only&quot;,
+      &quot;comparison_type&quot;: &quot;point_mutation&quot;,
+      &quot;synthetic&quot;: true,
+      &quot;status&quot;: &quot;completed&quot;,
+      &quot;reference&quot;: {
+        &quot;pdb_sha256&quot;: &quot;2b4ff1d8fea5e2dfdcc7b46d60f50774bba40b4dfff293d4791248960deedf70&quot;,
+        &quot;fasta_sha256&quot;: &quot;2b4ff1d8fea5e2dfdcc7b46d60f50774bba40b4dfff293d4791248960deedf70&quot;,
+        &quot;prepared_pdb_sha256&quot;: &quot;2b4ff1d8fea5e2dfdcc7b46d60f50774bba40b4dfff293d4791248960deedf70&quot;
+      },
+      &quot;foldx&quot;: {
+        &quot;runs&quot;: 5,
+        &quot;temperature&quot;: 298.0,
+        &quot;pH&quot;: 7.0,
+        &quot;ion_strength&quot;: 0.05,
+        &quot;version&quot;: &quot;NOT RUN: hand-written synthetic fixture&quot;,
+        &quot;seed_policy&quot;: &quot;Not applicable: synthetic values&quot;
+      },
+      &quot;variants&quot;: [
+        {
+          &quot;id&quot;: &quot;synthetic_variant_A&quot;,
+          &quot;foldx_index&quot;: 1,
+          &quot;mutation_line&quot;: &quot;AA1V;&quot;
+        },
+        {
+          &quot;id&quot;: &quot;synthetic_variant_B&quot;,
+          &quot;foldx_index&quot;: 2,
+          &quot;mutation_line&quot;: &quot;GA2S;&quot;
+        }
+      ],
+      &quot;runs&quot;: [
+        {
+          &quot;replicate&quot;: 1,
+          &quot;directory&quot;: &quot;replicates/run_001&quot;,
+          &quot;diff_file&quot;: &quot;replicates/run_001/Dif_demo_Repair.fxout&quot;,
+          &quot;diff_sha256&quot;: &quot;e253c6be59a3c44fe30ecc6385d53f4427ee780fd9be9fb60f0384525d2039d0&quot;,
+          &quot;variants&quot;: [
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_A&quot;,
+              &quot;foldx_index&quot;: 1,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_1.pdb&quot;
+            },
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_B&quot;,
+              &quot;foldx_index&quot;: 2,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_2.pdb&quot;
+            }
+          ]
+        },
+        {
+          &quot;replicate&quot;: 2,
+          &quot;directory&quot;: &quot;replicates/run_002&quot;,
+          &quot;diff_file&quot;: &quot;replicates/run_002/Dif_demo_Repair.fxout&quot;,
+          &quot;diff_sha256&quot;: &quot;094ab68c41a8d2c835372c834d22eca3a3cfc9dd16a0ec846b3da681d1aaa9f2&quot;,
+          &quot;variants&quot;: [
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_A&quot;,
+              &quot;foldx_index&quot;: 1,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_1.pdb&quot;
+            },
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_B&quot;,
+              &quot;foldx_index&quot;: 2,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_2.pdb&quot;
+            }
+          ]
+        },
+        {
+          &quot;replicate&quot;: 3,
+          &quot;directory&quot;: &quot;replicates/run_003&quot;,
+          &quot;diff_file&quot;: &quot;replicates/run_003/Dif_demo_Repair.fxout&quot;,
+          &quot;diff_sha256&quot;: &quot;dc5097f83d8528bb2868a0ebaf7d38a279a4f309d09f1b13dd9cbfd88f6afd92&quot;,
+          &quot;variants&quot;: [
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_A&quot;,
+              &quot;foldx_index&quot;: 1,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_1.pdb&quot;
+            },
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_B&quot;,
+              &quot;foldx_index&quot;: 2,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_2.pdb&quot;
+            }
+          ]
+        },
+        {
+          &quot;replicate&quot;: 4,
+          &quot;directory&quot;: &quot;replicates/run_004&quot;,
+          &quot;diff_file&quot;: &quot;replicates/run_004/Dif_demo_Repair.fxout&quot;,
+          &quot;diff_sha256&quot;: &quot;0931a618ad2cade162964da9482d52423ccabf5787a7399f0a7eb18cd7125ed6&quot;,
+          &quot;variants&quot;: [
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_A&quot;,
+              &quot;foldx_index&quot;: 1,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_1.pdb&quot;
+            },
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_B&quot;,
+              &quot;foldx_index&quot;: 2,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_2.pdb&quot;
+            }
+          ]
+        },
+        {
+          &quot;replicate&quot;: 5,
+          &quot;directory&quot;: &quot;replicates/run_005&quot;,
+          &quot;diff_file&quot;: &quot;replicates/run_005/Dif_demo_Repair.fxout&quot;,
+          &quot;diff_sha256&quot;: &quot;6f50831bef44328406099dd95eeeadaa3968c9584862696f64b7c1cd16dd4e50&quot;,
+          &quot;variants&quot;: [
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_A&quot;,
+              &quot;foldx_index&quot;: 1,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_1.pdb&quot;
+            },
+            {
+              &quot;variant_id&quot;: &quot;synthetic_variant_B&quot;,
+              &quot;foldx_index&quot;: 2,
+              &quot;expected_model_id&quot;: &quot;demo_Repair_2.pdb&quot;
+            }
+          ]
+        }
+      ],
+      &quot;notes&quot;: [
+        &quot;Hashes identify a synthetic fixture label, not an existing PDB or FASTA.&quot;,
+        &quot;Mutation labels and all numerical energies are artificial test data.&quot;
+      ]
+    }
+  }
+}</pre></details></section><footer>Offline report · no external assets or network requests · generated by protein_stability</footer></main></body></html>

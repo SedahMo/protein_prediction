@@ -1,0 +1,28 @@
+HEADER    SYNTHETIC SOFTWARE FIXTURE - GEOMETRY NOT BIOLOGICAL
+REMARK    BACKBONE ONLY; NEVER USE FOR BIOLOGICAL ENERGY INFERENCE
+ATOM      1  N   ALA A   1       0.000   0.000   0.000  1.00 20.00           N
+ATOM      2  CA  ALA A   1       1.300   0.500   0.000  1.00 20.00           C
+ATOM      3  C   ALA A   1       2.600   0.000   0.000  1.00 20.00           C
+ATOM      4  O   ALA A   1       2.900  -1.000   0.000  1.00 20.00           O
+ATOM      5  N   CYS A   2       3.800   0.000   0.000  1.00 20.00           N
+ATOM      6  CA  CYS A   2       5.100   0.500   0.000  1.00 20.00           C
+ATOM      7  C   CYS A   2       6.400   0.000   0.000  1.00 20.00           C
+ATOM      8  O   CYS A   2       6.700  -1.000   0.000  1.00 20.00           O
+ATOM      9  N   ASP A   3       7.600   0.000   0.000  1.00 20.00           N
+ATOM     10  CA  ASP A   3       8.900   0.500   0.000  1.00 20.00           C
+ATOM     11  C   ASP A   3      10.200   0.000   0.000  1.00 20.00           C
+ATOM     12  O   ASP A   3      10.500  -1.000   0.000  1.00 20.00           O
+ATOM     13  N   GLU A   4      11.400   0.000   0.000  1.00 20.00           N
+ATOM     14  CA  GLU A   4      12.700   0.500   0.000  1.00 20.00           C
+ATOM     15  C   GLU A   4      14.000   0.000   0.000  1.00 20.00           C
+ATOM     16  O   GLU A   4      14.300  -1.000   0.000  1.00 20.00           O
+ATOM     17  N   PHE A   5      15.200   0.000   0.000  1.00 20.00           N
+ATOM     18  CA  PHE A   5      16.500   0.500   0.000  1.00 20.00           C
+ATOM     19  C   PHE A   5      17.800   0.000   0.000  1.00 20.00           C
+ATOM     20  O   PHE A   5      18.100  -1.000   0.000  1.00 20.00           O
+ATOM     21  N   GLY A   6      19.000   0.000   0.000  1.00 20.00           N
+ATOM     22  CA  GLY A   6      20.300   0.500   0.000  1.00 20.00           C
+ATOM     23  C   GLY A   6      21.600   0.000   0.000  1.00 20.00           C
+ATOM     24  O   GLY A   6      21.900  -1.000   0.000  1.00 20.00           O
+TER
+END
