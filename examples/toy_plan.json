@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "study_id": "synthetic-input-smoke-test",
+  "comparison_type": "point_mutation",
+  "synthetic": true,
+  "reference": {
+    "fasta": "toy_reference.fasta",
+    "pdb": "toy_reference.pdb",
+    "chain_map": {"A": "toy"}
+  },
+  "variants": [
+    {"id": "toy_A1V", "mutations": [{"chain": "A", "residue_number": 1, "from": "A", "to": "V"}]},
+    {"id": "toy_D3E", "mutations": [{"chain": "A", "residue_number": 3, "from": "D", "to": "E"}]}
+  ],
+  "foldx": {"runs": 5, "temperature": 298.0, "pH": 7.0, "ion_strength": 0.05, "version": "SYNTHETIC-NO-FOLDX", "timeout_seconds": 60}
+}

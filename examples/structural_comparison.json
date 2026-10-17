@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "study_id": "linker-orientation-study-template",
+  "comparison_type": "linker",
+  "note": "设计记录模板；不交给 BuildModel。复制模板后选择 linker、domain_order 或 cross_protein。",
+  "constructs": [
+    {"id": "construct_A", "fasta": "../private_inputs/constructs.fasta", "record_id": "A", "architecture": "VH-linker_A-VL", "models": []},
+    {"id": "construct_B", "fasta": "../private_inputs/constructs.fasta", "record_id": "B", "architecture": "VH-linker_B-VL", "models": []}
+  ],
+  "modeling_protocol": {"tool_version": "", "seeds": [], "templates": [], "relaxation": "", "matching_domain_boundaries": ""},
+  "review_fields": ["domain confidence and interdomain PAE", "linker conformational diversity", "VH/VL interface contacts", "disulfide geometry", "clashes and exposed hydrophobic patches", "expression yield", "SEC monomer fraction", "DSF or DSC conditions and transitions"],
+  "decision": "待同方案结构集合及实验结果；不以各模型 FoldX 总能量排序。"
+}
